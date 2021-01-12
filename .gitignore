@@ -1,0 +1,3 @@
+*.vscode
+cryptoToEuro/API_KEY.py
+cryptoToEuro/__pycache__
