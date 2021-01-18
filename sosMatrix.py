@@ -2,8 +2,6 @@
 # Στην συνέχεια θα βρίσκει το πλήθος των θέσεων και γεμίζει στην τύχη τις μισές με S και τις μισές με O. 
 # Σκοπός είναι να μετρήσετε πόσες φορές εμφανίζεται το SOS οριζόντια, κάθετα, και διαγώνια. 
 # Το πρόγραμμα επαναλλαμβάνεται 100 φορές (για τις ίδιες διαστάσεις) και επιστρέφει τον μέσο όρο των τριάδων SOS.
-
-# issue #5, get the dimensions of matrix, randomly fill with: S, O, S and the find how many "SOS" occur horizontally, vertically and diagonally
 import random
 try:
     rows = int(input("Δώσε το πλήθος των γραμμών: "))
@@ -47,5 +45,4 @@ for i in range (100): # loop 100 times and find the mean value that "SOS" appear
 # i have to implement a function where it searches through the matrix and finds "SOS"
 
 avgSOS = int(sumSOS / 100) # calculate the average appeareances of "SOS" in a 100 randomly different matrices
-print(matrix)
 print(avgSOS)
