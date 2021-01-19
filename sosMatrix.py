@@ -54,23 +54,25 @@ for i in range (100): # loop 100 times and find the mean value that "SOS" appear
             # initialize the starting point for the current direction
             rowDir = r + xDir[j]
             colDir = c + yDir[j]
-
+            flag = True
+            
             # check for the remaining characters
             for k in range(1, len(word)):
                 # break if position out of bounds
                 if(rowDir >= rows or rowDir < 0 or colDir >= cols or colDir < 0):
+                    flag = False
                     break
                 
                 # break if characters don't match
                 if(matrix[rowDir][colDir] != word[k]):
+                    flag = False
                     break
 
                 # continue moving in the desired direction
                 rowDir += xDir[j]
                 colDir += yDir[j]
-
-                # if all the characters have matched then it should be equal to k
-                if k == len(word):
+                # if all the characters have matched then flag is True
+                if flag:
                     return True
         return False
 
@@ -83,6 +85,4 @@ for i in range (100): # loop 100 times and find the mean value that "SOS" appear
     findWord(keyword)
 
 avgSOS = int(sumSOS / 100) # calculate the average appeareances of "SOS" in a 100 randomly different matrices
-print(sumSOS)
-print(matrix)
 print(avgSOS)
