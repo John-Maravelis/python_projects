@@ -2,3 +2,4 @@
 crypto_to_euro/API_KEY.py
 crypto_to_euro/__pycache__
 __pycache__
+.env
