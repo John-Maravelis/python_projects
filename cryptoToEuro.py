@@ -1,11 +1,19 @@
 # Γράψτε ένα κώδικα σε Python ο οποίος να παίρνει σαν είσοδο ένα λεξικό από αρχείο το οποίο περιέχει τα κρυπτονομίσματα (όνομα) που έχει 
 # ένας χρήστης και πόσα από αυτά. Χρησιμοποιείστε το API https://min-api.cryptocompare.com για να βρείτε σε τι ποσό σε ευρώ αντιστοιχούν.
-
-from crypto_to_euro.api_key import API_KEY 
-# keeping the api key secret for privacy reasons. 
+ 
 # In order for the code to run you should add your own api key from https://min-api.cryptocompare.com
-from crypto_to_euro.inputDict import crypto
 import requests
+import os 
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.environ.get('API_KEY')
+
+# specify the name and quantity of crypto you want to calculate
+crypto = {
+    "name" : "BTC",
+    "quantity" : "1000" 
+}
 
 url = "https://min-api.cryptocompare.com/data/price?fsym=" + crypto["name"] + "&tsyms=EUR&api_key=" + API_KEY
 try:
